@@ -1,0 +1,23 @@
+<ion-content>
+    <div class="row darkGreybackground no-padding" style="margin-top: 2%">
+        <p class="col col-10 no-padding">#</p>
+        <p class="col col-67 no-padding">Deliveries History</p>
+        <p class="col col-20 no-padding" >D.time</p>
+    </div>
+    <div class="row" ng-repeat="data in deliveryData" ng-class="{'whiteBackground': $index%2==0,'greyBackground':$index%2!=0 }">
+        <p class="col col-10 no-padding">{{$index+1}}</p>
+        <p class="col col-67 no-padding">{{data.name}}</p>
+        <p class="col col-20 no-padding" style="font-size: 10px">{{data.Date}}</p>
+    </div>
+    <hr/>
+    
+    <div class="row">
+        <p class="col col-50 col-offset-25 text-center">Congratulations!<br/>You made $ 60.15 <br/> in just 4 deliveries.</p>
+    </div>
+    <div class="row">
+        <p class="col col-80 col-offset-10 text-center">Deliver More and earn more.</p>
+    </div>
+    <div class="row">
+        <p class="col col-50 col-offset-25 text-center">You will be paid on <br/>30 December 2015.</p>
+    </div>
+</ion-content>

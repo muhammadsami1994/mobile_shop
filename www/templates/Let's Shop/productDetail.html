@@ -1,0 +1,55 @@
+<ion-content>
+  <!--<div style="background-color: white">-->
+  <div>
+      <ion-slide-box ng-if="populateImage">
+        <ion-slide ng-repeat="image in productImages">
+          <div class="col col-center">
+            <img ng-src="{{image}}" alt="" style="width:100%;height: 100px"/>
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+  </div>
+  <div class="row no-margin">
+    <p class=" col col-90">{{productDetail.productName}}</p>
+    <!--<i class="ion-android-cart col-10 cart" ng-click="changeState('viewShoppingCart')"></i>-->
+    <i class="ion-android-cart col-10 cart" ng-click="placeOrder()"></i>
+  </div>
+
+  <div class="row">
+    <p class="col col-20">${{productDetail.price}}/kg</p>
+
+    <p class="col col-20 text-center" ng-class="{'requiredClass':quantity}">Qty</p>
+    <input type="number" ng-model="orderObject.quantity" class="col-20 border"/>
+
+    <p class="col col-20 text-center">Color</p>
+
+    <div class="col-20 border boxHeight bg-blue "></div>
+  </div>
+  <div class="row">
+    <p class="col col-20">
+      <i class="productDetailStar" ng-class="{'ion-android-star-outline':averageRating<=0,'ion-android-star':averageRating>=0}"></i>
+      <i class="productDetailStar" ng-class="{'ion-android-star-outline':averageRating<=1,'ion-android-star':averageRating>=1}"></i>
+      <i class="productDetailStar" ng-class="{'ion-android-star-outline':averageRating<=2,'ion-android-star':averageRating>=2}"></i>
+      <i class="productDetailStar" ng-class="{'ion-android-star-outline':averageRating<=3,'ion-android-star':averageRating>=3}"></i>
+      <i class="productDetailStar" ng-class="{'ion-android-star-outline':averageRating<=4,'ion-android-star':averageRating>=4}"></i>
+    </p>
+
+    <p class="col col-20">Weight</p>
+    <!--<input type="number" ng-model="productDetail.weight" class="col-20 border"/>-->
+    <div class="col-20 border productWeight">{{productDetail.weight}}</div>
+    <p class="col col-20 text-center">Size</p>
+    <input type="number" class="col-20 border"/>
+  </div>
+
+  <div class="row text-center">
+    <p class="col-20" style="font-size: 10px;color: dodgerblue;" ng-click="changeState('productReview')">Reviews(5)</p>
+  </div>
+  <!--</div>-->
+
+  <div class="row text-center darkGreybackground">
+    <!--<p class="col" style="margin-top:75px">Product Description</p>-->
+    <p class="col">Product Description</p>
+  </div>
+  <div class="row">
+    <div class="col col-center border productDescription">{{productDetail.description}}</div>
+  </div>

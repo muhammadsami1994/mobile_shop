@@ -1,0 +1,52 @@
+<ion-content>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Order History Detail</p>
+    </div>
+    <div class="row no-margin fontStyle">
+        <div class="col col-50">
+            <p class="col textBold">Delivered By</p>
+            <p class="col textMarginTop">Jake Alvarez</p>
+            <p class="col textMarginTop">Phone: 310-321-4566</p>
+            <p class="col textMarginTop"><i class="textBold">Service Fee</i>: $ 22.25 </p>
+            <small class="col textMarginTop"><i class="textBold">Delivery Date</i>: 05/16/2015 </small>
+
+        </div>
+        <div class="col col-50 text-center">
+            <p class="col textBold textColor">Rate this delivery</p>
+            <div class="col thumbMargin">
+                <i class="ion-thumbsup thumb"></i>
+                <i class="ion-thumbsdown thumb"></i>
+            </div>
+            <p class="col ">@ 15:45 </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col col-50">
+            <button class="col col-80 col-offset-10" ng-click="changeState('messagingView')">View Messages</button>
+        </div>
+        <div class="col col-50">
+            <button class="col col-80 col-offset-10">View Receipt</button>
+        </div>
+    </div>
+
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Total</p>
+    </div>
+
+    <div class="" ng-repeat="shoppingList in shoppingListData" ng-class="{'whiteBackground': $index%2==0,'greyBackground':$index%2!=0 }">
+        <div class="row">
+            <p class="col-10">{{$index+1}}</p>
+            <p class=" col-90"><input class="col-offset-10" type="checkbox" ng-model="shoppingList.status"/> {{shoppingList.name}}</p>
+        </div>
+        <p class=" col col-90 col-offset-10 no-padding " ng-if="shoppingList.purchaseNote!=''" style="text-decoration: underline;margin-top: 0">Purchase Note:</p>
+        <p class=" col-90 col-offset-10 no-padding" ng-if="shoppingList.purchaseNote!=''" style="margin-top: 0">{{shoppingList.purchaseNote}}</p>
+    </div>
+
+    <div class="row">
+        <button class=" col-80 col-offset-10">Done,I will deliver Now</button>
+    </div>
+    <div class="row no-margin">
+        <button class=" col-80 col-offset-10">Done,I will deliver Later</button>
+    </div>
+</ion-content>

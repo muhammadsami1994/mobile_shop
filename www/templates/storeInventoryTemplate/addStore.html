@@ -1,0 +1,118 @@
+<ion-content>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Store Information</p>
+    </div>
+    <form name="addStoreForm" novalidate>
+    <label class="item item-input">
+        <span class="input-label" ng-class="{'requiredClass': addStoreForm.storeName.$error.required && submited}">Store Name</span>
+        <input type="text" name="storeName" ng-model="storeData.storeName" required>
+<!--
+        <span class="col col-50 col-offset-25 no-padding" style="color:red" ng-show="addStoreForm.storeName.$dirty && addStoreForm.storeName.$invalid">
+        <span ng-show="addStoreForm.storeName.$error.required">Required.</span>
+        </span>
+-->
+    </label>
+    <label class="item item-input">
+        <span class="input-label ">Description</span>
+        <input type="text" ng-model="storeData.description">
+    </label>
+    <label class="item item-input">
+        <span class="input-label" ng-class="{'requiredClass': addStoreForm.phone.$error.required && submited}">Phone</span>
+        <input type="number" name="phone" ng-model="storeData.phone" required>
+        <!--<span class="col col-50 col-offset-25 no-padding" style="color:red" ng-show="addStoreForm.phone.$dirty && addStoreForm.phone.$invalid">
+        <span ng-show="addStoreForm.phone.$error.required">Required.</span>
+        </span>-->
+    </label>
+
+    <div class="row">
+        <p class="col text-center textColor" ng-click="getCurrentLocation()">Get Current Location</p>
+    </div>
+
+    <div class="row">
+        <small class="col col-33">Co-ordinates</small>
+        <input class="col col-25 border" type="text" ng-model="locationData.lat"/>
+        <input class="col col-25 col-offset-10 border" type="text" ng-model="locationData.long"/>
+    </div>
+        <div class="row darkGreybackground no-padding no-margin">
+            <p class="col">Images</p>
+        </div>
+
+        <div class="row">
+            <div class="col col-50">
+                <p class="col text-center textColor" ng-click="selectImages()">Select a file</p>
+            </div>
+            <div class="col col-50">
+                <p class="col text-center textColor"ng-click="takePicture()">Take a Picture</p>
+            </div>
+        </div>
+
+
+        <div>
+            <ion-slide-box ng-if="populateImage">
+                <ion-slide ng-repeat="image in productImages track by $index">
+                    <div class="col col-80 col-offset-10">
+                        <img ng-src="{{image}}" alt=""  style="width:100%;height: 100px"/>
+                    </div>
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Store Address</p>
+    </div>
+
+    <label class="item item-input">
+        <span class="input-label " ng-class="{'requiredClass': addStoreForm.address.$error.required && submited}">Adress</span>
+        <input type="text" name="address" ng-model="storeData.address" required>
+        <!--<span class="col col-50 col-offset-25 no-padding" style="color:red" ng-show="addStoreForm.address.$dirty && addStoreForm.address.$invalid">
+        <span ng-show="addStoreForm.address.$error.required">Required.</span>
+        </span>-->
+    </label>
+    <div class="row item">
+        <div class="col col-50" style="margin-left: 6px" ng-class="{'requiredClass': errorForCountry}">Country</div>
+        <div class="col col-50">
+            <country-select class="col col-80 col-offset-10" data-ng-model="storeData.country"></country-select>
+        </div>
+    </div>
+    <label class="item item-input">
+        <span class="input-label ">Postal code</span>
+        <input type="number" ng-model="storeData.postalCode">
+    </label>
+
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Store Type</p>
+    </div>
+    <div class="row">
+        <div class="col col-50">
+            <p class="col">Industry</p>
+        </div>
+        <div class="col col-50">
+
+            <select class="col col-80 col-offset-10" name="" id="2" style="margin-top: 6px" ng-model="storeData.industry">
+                <option value="Small Shop">Small Shop</option>
+            </select>
+        </div>
+    </div>
+
+    <label class="item item-input">
+        <span class="input-label ">Category</span>
+        <input type="text"  ng-model="CategoryData.search" ng-change="searchCategory()" ng-blur="closeSuggestionWindow()">
+    </label>
+    <ion-scroll delegate-handle="taskScroll" direction="y">
+        <div class="list optionWindow">
+            <li class="item" ng-repeat="matches in CategoryData.categoryMatches" ng-click="selectFromOptions(matches)" ng-blur="hideOptionWindow('category')">{{matches}}</li>
+        </div>
+    </ion-scroll>
+
+    <div class="row">
+        <p class="col col-50 textBold">Searchable Keywords:</p>
+        <p class="col col-50">(Give semicolon(;) to seprate the Keywords)</p>
+    </div>
+    <div class="row">
+        <input class="col col-80 col-offset-10 border" type="text" ng-model="$parent.storeTags"/>
+    </div>
+
+    <div class="row">
+        <button class="col-offset-25 col-50" ng-click="createStore(addStoreForm); submited=true">Create Store</button>
+    </div>
+    </form>
+</ion-content>

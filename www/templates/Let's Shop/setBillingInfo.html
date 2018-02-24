@@ -1,0 +1,51 @@
+<ion-content>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col" ng-class="{'requiredClass': selectMode}">Billing Information</p>
+    </div>
+    <div class="row no-margin" ng-repeat="billingRecord in billingRecords">
+        <div class="col">
+            <input type="radio" ng-model="scopeValue" ng-click="check(billingRecord)" name="location"/>
+            <span>{{billingRecord}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <textarea class="col col-80 col-offset-10 border" ng-show="billingMode.mode == 'New billing record'" name="" id="" cols="30" rows="4" placeholder="Billing information detail goes here (i.e. credit card, banking, etc" ng-model="billingMode.information"></textarea>
+    </div>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Order Summary</p>
+    </div>
+
+    <div class="row no-margin">
+        <p>Services Fee is &nbsp</p><span ng-show="serviceFeeBolean">${{billingMode.defaultServiceFee}}</span>
+        <input class="border" ng-hide="serviceFeeBolean" type="number" style="font-size: smaller" ng-model="billingMode.deliveryFee">
+    </div>
+
+    <div class="row no-margin">
+        <div class="col col-50">
+            <p class="col col-80 col-offset-10 bg-grey text-center" ng-click="serviceCharges(true,null)" >Suggest a Service Fee</p>
+        </div>
+        <div class="col col-50">
+            <p class="col col-80 col-offset-10 bg-grey text-center" ng-click="serviceCharges(null,true)" >Select a Delivery Fee</p>
+        </div>
+    </div>
+
+    <div class=" no-margin">
+        <p class="col">E.purchase Subtotal is $75.76</p>
+        <p class="col textMarginTop">Your Total Estimate is $94.71 </p>
+   </div>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Optional Delivery Instruction</p>
+    </div>
+
+    <div class="row no-margin" style="padding-top: 5px">
+        <!--<div class="col border">Upon arrival, please leave ring the door bell and wait for someone to receive the items.  Thank you</div>-->
+        <textarea class="col border" ng-model="billingMode.optionalDeliveryInstructions" rows="4" cols="50"></textarea>
+    </div>
+</ion-content>
+
+<ion-footer-bar>
+    <div class="row">
+        <!--<button class="col text-center button" ng-click="changeState('letsShop')">Submit Order</button>-->
+        <button class="col text-center button" ng-click="submitOrder()">Submit Order</button>
+    </div>
+</ion-footer-bar>

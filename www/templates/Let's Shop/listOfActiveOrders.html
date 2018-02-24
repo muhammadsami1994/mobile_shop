@@ -1,0 +1,9 @@
+<ion-content>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col" ng-click="changeState('acceptCounterOffer')">Order Status</p>
+    </div>
+    <div ng-repeat="order in order" ng-class="{'whiteBackground': $index%2!=0,'greyBackground':$index%2==0 }">
+        <p class="row" ng-click="setSelectedActiveOrder(order,'changeServiceFee')" style="font-style: oblique;">{{order.storeName}}({{order.product.length}}items)</p>
+        <p class="row" ng-click="setSelectedActiveOrder(order,'orderStatusDetail')" style="font-style: oblique;">{{order.status}}</p>
+    </div>
+</ion-content>

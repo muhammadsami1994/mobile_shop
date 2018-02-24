@@ -1,0 +1,29 @@
+<ion-content>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Order Status</p>
+    </div>
+    <div class="row no-margin">
+        <p class="col text-center ">You have Service Fee offers:</p>
+    </div>
+
+    <div class="row no-margin" ng-repeat="offer in offers">
+        <p  class="col col-33 ">{{offer}}</p>
+        <p class="col col-33 ">$22.00</p>
+        <button class="col col-33 button no-padding">Accept</button>
+    </div>
+
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Order Items</p>
+    </div>
+
+    <div class="row no-margin" ng-repeat="orderItem in orderItems" ng-class="{'whiteBackground': $index%2!=0,'greyBackground':$index%2==0 }">
+        <p class="col">{{orderItem}}</p>
+    </div>
+    <hr/>
+</ion-content>
+
+<ion-footer-bar>
+    <div class="row">
+        <button class="col col-offset-25 button col-50" >Cancel</button>
+    </div>
+</ion-footer-bar>

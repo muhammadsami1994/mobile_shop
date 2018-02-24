@@ -1,0 +1,63 @@
+<ion-content>
+  <div class="row darkGreybackground no-padding">
+    <p class="col no-padding">Delivery Filter</p>
+  </div>
+  <div class="row" style="margin-top: 0">
+    <p class="col">Deliveries within:</p>
+
+    <div class="col col-offset-25">
+      <!--<select>
+          <option value="1">4 hours</option>
+      </select>-->
+      <select ng-model="schedule.hrs" ng-options="hrs for hrs in hoursArray" ng-change="search()">
+        <!--<option value="" ng-repeat="date in Dates">{{date}}</option>-->
+        <option value="">hours</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <p class="col">Deliveries Time:</p>
+
+    <div class="range col no-padding">
+      <input type="range" name="volume" min="0" max="60" ng-model="schedule.time" ng-change="search()">
+    </div>
+  </div>
+  <div class="row">
+    <p class="col">Shopping Cost</p>
+
+    <div class="range col no-padding">
+      <input type="range" name="volume">
+    </div>
+  </div>
+  <div class="row">
+    <a href=""><p>More Filter Options</p></a>
+  </div>
+  <button class="col col-50 col-offset-25">Search</button>
+  <div class="row darkGreybackground no-padding" style="margin-top: 2%">
+    <p class="col col-80 no-padding">Orders Waiting for you to accept</p>
+
+    <p class="col col-20 no-padding">D.time</p>
+  </div>
+  <div ng-hide="showSearchData">
+    <div class="row" ng-repeat="data in orderData"
+         ng-class="{'whiteBackground': $index%2==0,'greyBackground':$index%2!=0 }"
+         ng-click="goToOrderStatusDetail(data)">
+      <p class="col col-80 padding-left" ng-model="data.storeName">{{data.storeName}}</p>
+      <!--<p class="col col-80 padding-left" ng-model="data.name">{{data.name}}</p>-->
+      <p class="col col-20 padding-left">{{data.deliveryInformation.date.time.hrs}}:{{data.deliveryInformation.date.time.min}} </p>
+      <!--<p class="col col-20 padding-left">{{data.Time.hrs}}:{{data.Time.min}} </p>-->
+    </div>
+  </div>
+  <div ng-show="showSearchData">
+    <div class="row" ng-show="showSearchData" ng-repeat="data in searchData"
+         ng-class="{'whiteBackground': $index%2==0,'greyBackground':$index%2!=0 }"
+         ng-click="goToOrderStatusDetail(data)">
+      <p class="col col-80 padding-left" ng-model="data.storeName">{{data.storeName}}</p>
+      <!--<p class="col col-80 padding-left" ng-model="data.name">{{data.name}}</p>-->
+      <p class="col col-20 padding-left">{{data.deliveryInformation.date.time.hrs}}:{{data.deliveryInformation.date.time.min}} </p>
+      <!--<p class="col col-20 padding-left">{{data.Time.hrs}}:{{data.Time.min}} </p>-->
+    </div>
+  </div>
+
+
+</ion-content>

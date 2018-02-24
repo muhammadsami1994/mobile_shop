@@ -1,0 +1,20 @@
+<ion-content>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Create a Shopping List</p>
+    </div>
+    <p>To create a shopping list follow these easy steps:</p>
+    <p>1. Find a store.</p>
+    <p>2. dd your shopping list items to cart.</p>
+    <p>3. View your cart.</p>
+    <p>4. Select Add to shopping list button.</p>
+<div class="row">
+    <p class="col col-80 col-offset-10 text-center bg-grey" ng-click="changeState('letsShop')">Find a Store Start builing your shopping list.</p>
+</div>
+
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Select a Shopping list.</p>
+    </div>
+    <div class="row" ng-repeat="shoppingList in shoppingList.carts" ng-class="{'whiteBackground': $index%2!=0,'greyBackground':$index%2==0 }" ng-click="goToShoppingListDetail(shoppingList,$index)">
+        <p class="col" style="font-style: oblique;">{{shoppingList.storeName}}({{shoppingList.products.length}} items)</p>
+    </div>
+</ion-content>

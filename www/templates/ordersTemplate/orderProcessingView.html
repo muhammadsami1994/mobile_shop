@@ -1,0 +1,21 @@
+<ion-content>
+    <div class="row">
+       <p class="col col-80 col-offset-10 text-center"> Let’s go to Wal-Mart and shop!</p>
+    </div>
+
+    <div class="no-padding" ng-repeat="heading in headings" ng-click="checkState(heading)">
+        <div class="row no-padding-ud">
+            <div class="col col-80 col-offset-10" style="height: 100px;background-color: #d2d2d2">
+            </div>
+        </div>
+        <div class="row no-padding-ud">
+            <div class="col col-80 col-offset-10" style="background-color: grey;color: #ffffff;font-weight: 100">
+                <p class="no-margin" style="font-size: 20px">{{heading}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <p class="col col-80 col-offset-10 text-center" style="border: 1px solid black;border-radius:2px;margin-top: 1%"> I’ve delivered the order!</p>
+    </div>
+</ion-content>

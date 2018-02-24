@@ -1,0 +1,56 @@
+<ion-content>
+    <div class="row">
+        <h4 class="col text-center fontLightWeight">Supermarkets (day)</h4>
+    </div>
+    <div class="row">
+        <h5 class="col text-center fontLightWeight textColor textMarginTop">View Template Rule</h5>
+    </div>
+
+    <div class="row">
+        <div class="col col-50">
+            <p class="col col-80 col-offset-10">Find a Store</p>
+        </div>
+        <div class="col col-50">
+            <input type="text" class="col col-80 col-offset-10 border"/>
+        </div>
+    </div>
+    <div class="row">
+        <button class="col col-50 col-offset-25">Search</button>
+    </div>
+
+    <div class="row darkGreybackground  no-padding no-margin">
+        <p class="col col-10 ">#</p>
+        <p class="col col-90 no-padding">Stores</p>
+
+    </div>
+    <div class="row" ng-repeat="data in location" ng-class="{'whiteBackground': $index%2==0,'greyBackground':$index%2!=0 }" ng-click="changeState('addDeliveryFeeTemplate')">
+        <p class="col col-10 no-padding">{{$index+1}}</p>
+        <p class="col col-90 no-padding">{{data}}</p>
+    </div>
+    <hr/>
+
+    <div class="row">
+        <div class="col col-50">
+            <p class="col col-80 col-offset-10">Select a Store Type</p>
+        </div>
+        <div class="col col-50">
+            <select name="" id="" class="col col-80 col-offset-10">
+                <option value="">Text</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <button class="col col-50 col-offset-25">Add</button>
+    </div>
+
+    <div class="row darkGreybackground  no-padding no-margin">
+        <p class="col col-10 ">#</p>
+        <p class="col col-90 no-padding">Store Types/Industries</p>
+
+    </div>
+    <div class="row" ng-repeat="data in StoreType" ng-class="{'whiteBackground': $index%2==0,'greyBackground':$index%2!=0 }" ng-click="changeState('addDeliveryFeeTemplate')">
+        <p class="col col-10 no-padding">{{$index+1}}</p>
+        <p class="col col-90 no-padding">{{data}}</p>
+    </div>
+</ion-content>

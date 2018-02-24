@@ -1,0 +1,88 @@
+
+<ion-content class="has-header scroll-content">
+    <div class="row darkGreybackground">
+        <p class="col">My Profile</p>
+    </div>
+
+
+<form name="signUpForm" novalidate>
+    <label class="item item-input">
+        <span class="input-label" ng-class="{'requiredClass': signUpForm.username.$error.required && submited}">username</span>
+        <!--<input type="text" ng-model="userData.username" required>-->
+        <input type="text" name="username" ng-model="userData.username" ng-minlength="5" required>
+<!--        <span class="col col-50 col-offset-25 no-padding" style="color:red" ng-show="signUpForm.username.$error.required && submited">
+        <span>Required.</span>
+        </span>-->
+    </label>
+    <label class="item item-input">
+        <span class="input-label" ng-class="{'requiredClass': signUpForm.firstName.$error.required && submited}">First Name</span>
+        <input type="text" name="firstName" ng-model="userData.firstName" required>
+        <!--<span class="col col-50 col-offset-25 no-padding" style="color:red" ng-show="signUpForm.firstName.$dirty && signUpForm.firstName.$invalid">-->
+        <!--<span class="col col-50 col-offset-25 no-padding" style="color:red" ng-show="signUpForm.firstName.$error.required && submited">
+            <span>Required.</span>
+        </span>-->
+    </label>
+    <label class="item item-input">
+        <span class="input-label" ng-class="{'requiredClass': signUpForm.lastName.$error.required && submited}">Last Name</span>
+        <input type="text" name="lastName" ng-model="userData.lastName" required>
+        <!--<span class="col col-50 col-offset-25 no-padding" style="color:red" ng-show="signUpForm.lastName.$dirty && signUpForm.lastName.$invalid">
+            <span ng-show="signUpForm.lastName.$error.required">Required.</span>
+        </span>-->
+    </label>
+    <label class="item item-input">
+        <span class="input-label" ng-class="{'requiredClass': signUpForm.location.$error.required && submited}">My Location</span>
+        <input type="text" name="location" ng-model="userData.location" required>
+        <!--<span class="col col-50 col-offset-25 no-padding" style="color:red" ng-show="signUpForm.location.$dirty && signUpForm.location.$invalid">
+            <span ng-show="signUpForm.location.$error.required">Required.</span>
+        </span>-->
+    </label>
+    <label class="item item-input">
+        <span class="input-label" ng-class="{'requiredClass': signUpForm.phone.$error.required && submited}">Phone</span>
+        <input type="number" name="phone" ng-model="userData.phone" required>
+        <!--<span class="col col-50 col-offset-25 no-padding" style="color:red" ng-show="signUpForm.phone.$dirty && signUpForm.phone.$invalid">-->
+        <!--<span class="col col-50 col-offset-25 no-padding" style="color:red" ng-show="signUpForm.phone.$dirty && signUpForm.phone.$invalid">
+            <span ng-show="signUpForm.phone.$error.required">Required.</span>
+        </span>-->
+    </label>
+    <label class="item item-input">
+        <span class="input-label" ng-class="{'requiredClass': signUpForm.email.$error.required && submited}">Email</span>
+        <input type="email" name="email" ng-model="userData.email" required>
+        <span style="color:red" ng-show="signUpForm.email.$error.email">
+          <!--<span class="col col-50 signUpFormEmail" ng-show="signUpForm.email.$error.required || submited">Required.</span>-->
+          <span class="col col-50">Invalid</span>
+        </span>
+    </label>
+    <label class="item item-input">
+        <span class="input-label" ng-class="{'requiredClass': signUpForm.password.$error.required && submited}">Password</span>
+        <input type="password" name="password" ng-model="userData.password" required>
+        <!--<span class="col col-50 col-offset-25 no-padding" style="color:red" ng-show="signUpForm.password.$dirty && signUpForm.password.$invalid">
+            <span ng-show="signUpForm.password.$error.required">Required.</span>
+        </span>-->
+    </label>
+    <div class="row darkGreybackground">
+        <p class="col">Picture</p>
+    </div>
+    <div class="row">
+        <div class="col col-50 profileImage">
+            <img ng-src="{{profileImage}}"  alt="" style="height: 75px;width: 60%"/>
+        </div>
+        <div class="col-50" style="text-align: center">
+            <div style="margin-top: 10%" ng-click="selectPicture('takePic')">Take a Picture</div>
+            <div style="margin-top: 10%" ng-click="selectPicture('selectPic')">Select a Picture</div>
+        </div>
+    </div>
+
+    <div class="row darkGreybackground">
+       <p class="col">Link  My Profile</p>
+    </div>
+    <div class="row">
+        <div class="col socialProfiles">
+            <ion-toggle ng-model="Mode" toggle-class="toggle-calm" style="border: none;padding: 11px" ng-repeat="socialNames in socialProfiles">{{socialNames}}</ion-toggle>
+        </div>
+
+    </div>
+    <div class="row">
+        <button type="submit" class="button col col-50 col-offset-25 no-padding" ng-click="signup(signUpForm);submited=true">Done</button>
+    </div>
+</form>
+</ion-content>

@@ -1,0 +1,11 @@
+<ion-content>
+    <div class="row darkGreybackground ">
+        <p class="col col-80 no-padding">My Deliveries</p>
+        <p class="col col-20 no-padding" >D.time</p>
+    </div>
+    <div class="row" ng-repeat="data in acceptedOrderData" ng-class="{'whiteBackground': $index%2==0,'greyBackground':$index%2!=0 }" ng-click="changeState('orderProcessingView')">
+        <p class="col col-80 no-padding">{{data.name}}</p>
+        <p class="col col-20 no-padding">{{data.Time}}</p>
+    </div>
+    <hr/>
+</ion-content>

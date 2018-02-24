@@ -1,0 +1,68 @@
+<ion-content>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Store Information</p>
+    </div>
+    <div class="col-offset-10">
+        <p class="col ">{{storeData.storeName}}</p>
+        <p class="col  textMarginTop">{{storeData.address}}</p>
+        <p class="col textMarginTop">{{storeData.phone}}</p>
+    </div>
+
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col col-90">Shopping Cart Items</p>
+        <i class="col icon ion-plus-round addMore" ng-click="changeState('productBrowsing')"></i>
+    </div>
+
+    <div class="row darkGreybackground no-padding " style="margin-top: 2%">
+        <p class="col col-10 no-padding">#</p>
+        <p class="col col-50 no-padding">Description</p>
+        <p class="col col-20 no-padding" >Qty</p>
+        <p class="col col-10 no-padding" style="font-size: 12px">Est Price</p>
+    </div>
+    <div ng-repeat="data in cartItems track by $index">
+        <!--<div class="row " ng-click="showToggle($index)" ng-class="{'whiteBackground': $index%2!=0,'greyBackground':$index%2==0 }">-->
+        <div class="row "  ng-class="{'whiteBackground': $index%2!=0,'greyBackground':$index%2==0 }">
+            <p class="col col-10 no-padding">{{$index+1}}</p>
+            <p class="col col-50 no-padding" ng-click="showToggle($index)">{{data.productName}}</p>
+            <p class="col col-20 no-padding" style="font-size: 10px" ng-hide="data.toggle==true" ng-if="data.toggle==false">{{data.quantity}}</p>
+            <!--<button class="col col-20" ng-if="data.toggle==true">Change</button>-->
+          <input type="number" class="col col-20" ng-model="data.quantity" ng-show="data.toggle==true">
+          <p class="col col-10 no-padding" style="font-size: 10px">{{data.price}}</p>
+        </div>
+      <div class="row no-margin" ng-if="data.toggle==true">
+            <small class="col col-67 col-offset-10 ">If it does not exist or cost more than</small>
+            <input type="text" ng-model="data.minimumCost" class="col col-20 border"/>
+        </div>
+      <div class="row" ng-if="data.toggle==true">
+        <div class="col col-75 no-margin">
+          <div class="row"  ng-repeat="option in options">
+            <!--<input type="radio" name="location"/>-->
+            <input type="radio" ng-model="checkValue" ng-change="costCheck(option)" name="location"/>
+            <span class="padding-left">{{option}}</span>
+          </div>
+        </div>
+        <div class="col col-25">
+          <button ng-click="changeValues($index)">
+            change
+          </button>
+        </div>
+
+      </div>
+        <div class="row">
+            <textarea class="col col-80 col-offset-10 border" placeholder="Comments" ng-show="specialInstruction" ng-model="specialInstructionText.instructions"></textarea>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <p class="col col-50 col-offset-50">Estimated Total:${{estimatedTotal}}</p>
+    </div>
+</ion-content>
+
+<ion-footer-bar>
+    <div class="row">
+        <button class="col-50" ng-click="addToShoppingList()">Add To Shopping List</button>
+        <!--<button class="col-50" ng-click="">Add To Shopping List</button>-->
+        <button class="col-50" ng-click="changeState('setDeliveryPoint')">Check-out</button>
+        <!--<button class="col-50" ng-click="costCheck()">Check-out</button>-->
+    </div>
+</ion-footer-bar>

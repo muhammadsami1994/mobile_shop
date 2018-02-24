@@ -1,0 +1,85 @@
+<ion-content>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Delivery Fee Rules</p>
+    </div>
+
+    <div class="row">
+        <div class="col col-34">
+            <p class="col rowMargin">Template Name</p>
+            <p class="col rowMargin">Shopping Cost</p>
+            <p class="col rowMargin">Delivery Fees</p>
+            <p class="col rowMargin">Enable Special Fees</p>
+            <p class="col rowMargin">Fee per Weight</p>
+            <p class="col rowMargin">Fee Per Volume</p>
+            <p class="col rowMargin">Fee Per Distance</p>
+            <p class="col rowMargin">$ of Items</p>
+            <p class="col rowMargin">Deliveries with in</p>
+            <p class="col rowMargin">Valid time period</p>
+            <p class="col rowMargin">Days Of the Week</p>
+        </div>
+        <div class="col col-66">
+            <input type="text" class="col border rowMargin"/>
+            <div class="range col ">
+                <input type="range" name="volume" >
+            </div>
+            <div class="row">
+                <input type="text" class="col-34 border"/>
+                <select name="" id="" class=" col-50 col-offset-10">
+                    <option value="">%/Fixed</option>
+                </select>
+            </div>
+            <div class="col">
+                <ion-toggle ng-model="Mode" toggle-class="toggle-calm" style="border:none"></ion-toggle>
+            </div>
+            <div class="row rowMargin">
+               $<input type="text" class="col col-34 border"/>
+               /<input type="text" class="col col-34 border"/> Kg
+            </div>
+            <div class="row rowMargin">
+               $<input type="text" class="col col-34 border"/>
+               /<input type="text" class="col col-34 border"/> m <sub>3</sub>
+            </div>
+            <div class="row rowMargin">
+               $<input type="text" class="col col-34 border"/>
+               /<input type="text" class="col col-34 border"/> Km
+            </div>
+
+            <div class="range col ">
+                <input type="range" name="volume" >
+            </div>
+            <input type="text" class="col border "/>
+            <div class="row rowMargin">
+                <input type="text" class="col col-34 border"/>
+                <input type="text" class="col col-34 col-offset-10 border"/>
+            </div>
+
+            <select name="" id="2" class=" col " style="margin-top: 25px">
+                <option value="">Mon,Tues</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row darkGreybackground no-padding no-margin">
+        <small class="col">Delivery Fee Calculator based on the above rule</small>
+    </div>
+
+    <div class="row">
+        <div class="col col-34">
+            <p class="col rowMargin">Shopping Cost</p>
+            <p class="col rowMargin">Size</p>
+            <p class="col rowMargin">Weight</p>
+            <p class="col rowMargin">Distance in Miles</p>
+
+        </div>
+        <div class="col col-66">
+            <input type="text" class="col border rowMargin"/>
+            <input type="text" class="col border rowMargin"/>
+            <input type="text" class="col border rowMargin"/>
+            <input type="text" class="col border rowMargin"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <p class="col text-center">Your projected earning is $ 19.22</p>
+    </div>
+</ion-content>

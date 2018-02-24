@@ -1,0 +1,96 @@
+<ion-content>
+  <div class="backgroundImage">
+    <div class="wrapper"></div>
+    <h4 class="col col-80 col-offset-10 text-center no-padding">Welcome to {{selectedStoreData.storeName}}</h4>
+    <h6 class="col col-80 col-offset-10 text-center no-padding">{{selectedStoreData.address}}</h6>
+    <div>
+      {{selectedStoreData.image}}
+    </div>
+    <div class="row">
+        <div class=" col-offset-25 col-50 text-center">
+        <button class="" style="margin-top: 80px" ng-click="changeState()">Shop Now</button>
+        </div>
+    </div>
+    <div class="row wrapperRow">
+    </div>
+</div>
+  <!--<div class="backgroundImage">
+    <h4 class="col col-80 col-offset-10 text-center no-padding">Welcome to {{selectedStoreData.storeName}}</h4>
+    <h6 class="col col-80 col-offset-10 text-center no-padding">{{selectedStoreData.address}}</h6>
+
+    <div class="row">
+      <div class=" col-offset-25 col-50 text-center">
+        <button class="" style="margin-top: 80px" ng-click="setStoreRating()">Shop Now</button>
+      </div>
+    </div>
+    <div class="row">
+    </div>
+
+  </div>-->
+    <div class="row">
+        <div class="col col-50">
+            <div class="col-offset-10" ng-repeat="star in rating">
+                <i ng-class="{'ion-android-star-outline':star<=0,'ion-android-star':star>=0}"></i>
+                <i ng-class="{'ion-android-star-outline':star<=1,'ion-android-star':star>=1}"></i>
+                <i ng-class="{'ion-android-star-outline':star<=2,'ion-android-star':star>=2}"></i>
+                <i ng-class="{'ion-android-star-outline':star<=3,'ion-android-star':star>=3}"></i>
+                <i ng-class="{'ion-android-star-outline':star<=4,'ion-android-star':star>=4}"></i>
+              <i class="ratingNumber" ng-click="showReviews($index)">{{ratingNumbers[$index]}}</i>
+            </div>
+        </div>
+        <div class="col col-50 text-center">
+            <div class="">
+              <i class="starRating" ng-class="{'ion-android-star-outline':averageRating<=0,'ion-android-star':averageRating>=0}"></i>
+              <i class="starRating" ng-class="{'ion-android-star-outline':averageRating<=1,'ion-android-star':averageRating>=1}"></i>
+              <i class="starRating" ng-class="{'ion-android-star-outline':averageRating<=2,'ion-android-star':averageRating>=2}"></i>
+              <i class="starRating" ng-class="{'ion-android-star-outline':averageRating<=3,'ion-android-star':averageRating>=3}"></i>
+              <i class="starRating" ng-class="{'ion-android-star-outline':averageRating<=4,'ion-android-star':averageRating>=4}"></i>
+            </div>
+            <div class="">
+                <a href="">Reviews({{selectedStoreData.reviews}})</a>
+            </div>
+            <div>
+                <i class="big-star" ng-repeat="rating in userRating track by $index" ng-click="changeRating($index)" ng-class="{'ratingStar':rating,'ion-android-star':rating,'ion-android-star-outline':!rating}"></i>
+            </div>
+          <div class="">
+            <a href="" ng-click="setStoreRating()">Rate this Product</a>
+          </div>
+            <div>
+                <i class="ion-thumbsup thumb" ng-class="{ 'voteOn': voteOn}" ng-click="changevoteStatus('voteUp')"></i>
+                <i class="ion-thumbsdown thumb" ng-class="{ 'voteOn': voteOff }" ng-click="changevoteStatus()"></i>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        Comments and Review Section
+    </div>
+    <div class="row">
+        <textarea class="col-offset-10 col-80 border" cols="" rows="4" placeholder="Enter Your Comments" ng-model="storeRatingData.comments"></textarea>
+    </div>
+    <div class="wrapper"></div>
+    <div class="row greyBackground">
+      <div class="col text-center textSize">Reviews</div>
+    </div>
+  <div class="wrapper"></div>
+  <div ng-repeat="comment in commentsFor" ng-class="{'greyBackground': $index%2==1,'whiteBackground': $index%2==0}">
+    <div class="row">
+      <div class="col col-80">{{comment.userName}}</div>
+    </div>
+    <div class="row">
+      <div class="col col-75">{{comment.comments}}</div>
+      <div class="col">
+        <i class="starRating"
+           ng-class="{'ion-android-star-outline':comment.starRating<=0,'ion-android-star':comment.starRating>=0}"></i>
+        <i class="starRating"
+           ng-class="{'ion-android-star-outline':comment.starRating<=1,'ion-android-star':comment.starRating>=1}"></i>
+        <i class="starRating"
+           ng-class="{'ion-android-star-outline':comment.starRating<=2,'ion-android-star':comment.starRating>=2}"></i>
+        <i class="starRating"
+           ng-class="{'ion-android-star-outline':comment.starRating<=3,'ion-android-star':comment.starRating>=3}"></i>
+        <i class="starRating"
+           ng-class="{'ion-android-star-outline':comment.starRating<=4,'ion-android-star':comment.starRating>=4}"></i>
+        <!--<i ng-class="{'ion-android-star-outline':comment.starRating<=5,'ion-android-star':comment.starRating>=5}"></i></div>-->
+      </div>
+
+    </div>
+</ion-content>

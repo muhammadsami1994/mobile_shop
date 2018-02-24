@@ -1,0 +1,55 @@
+<ion-content>
+    <div class="row darkGreybackground">
+        <p class="col">Store Information</p>
+    </div>
+    <label class="item item-input">
+        <span class="input-label ">Store Name</span>
+        <input type="text" placeholder="ABC Store" ng-model="storeData.storeName">
+    </label>
+    <label class="item item-input">
+        <span class="input-label ">Address</span>
+        <input type="text" placeholder="123 Sunny Rd, Some City,…" ng-model="storeData.address">
+    </label>
+    <label class="item item-input">
+        <span class="input-label ">Phone</span>
+        <input type="text" placeholder="123-444-1223">
+    </label>
+
+    <div class="row darkGreybackground">
+        <p class="col">Store Cart Items</p>
+    </div>
+
+    <div class="row darkGreybackground no-padding text-center" style="margin-top: 2%">
+        <p class="col col-10 no-padding">#</p>
+        <p class="col col-66 no-padding">Deliveries History</p>
+        <p class="col col-10 no-padding" >Qty</p>
+        <p class="col col-10 no-padding" style="font-size: 12px">Est Price</p>
+    </div>
+    <div class="row" ng-show="cartItems[0] !=undefined " ng-repeat="data in cartItems" ng-class="{'whiteBackground': $index%2!=0,'greyBackground':$index%2==0 }" ng-click="updateItem($index)">
+        <p class="col col-10 no-padding">{{$index+1}}</p>
+        <!--<p class="col col-67 no-padding text-center">{{data.name}}</p>-->
+        <p class="col col-70 no-padding text-center">{{data.name}}</p>
+        <!--<p class="col col-20 no-padding" style="font-size: 10px">{{data.Date}}</p>-->
+        <p class="col col-10 no-padding" style="font-size: 10px">{{data.quantity}}</p>
+        <p class="col col-10 no-padding" style="font-size: 10px">{{data.approxPrice}}</p>
+    </div>
+    <div class="row greyBackground" ng-show="cartItems[0] ==undefined ">
+        <p class="col no-padding text-center">No Order is placed</p>
+    </div>
+    <hr/>
+    <div class="row">
+        <p class="col text-center">Estimated Total:</p>
+        <p class="col text-center">{{estimatedTotal}}</p>
+    </div>
+</ion-content>
+
+<ion-footer-bar>
+    <div class="row">
+    <div class="col col-50">
+        <button class="col-80 col-offset-10" ng-click="addItem()">Add an Item</button>
+    </div>
+    <div class="col col-50">
+        <button class="col-80 col-offset-10" ng-click="checkOut()">Check-out</button>
+    </div>
+    </div>
+</ion-footer-bar>

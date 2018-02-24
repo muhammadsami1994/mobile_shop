@@ -1,0 +1,308 @@
+.greyBackground{
+    background-color: #eaeaea;
+}
+.darkGreybackground{
+    background-color:rgba(153, 153, 153, 0.66);
+    font-style: italic;
+    font-weight: bold;
+}
+.whiteBackground{
+    background-color: #ffffff;
+   }
+.textCenter{
+    text-align: center;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+}
+.no-padding{
+    padding: 0;
+}
+.no-margin{
+    margin: 0 !important;
+}
+.no-padding-ud{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.pane, .view{
+    top: 44px !important;
+    height: auto !important;
+}
+
+.bg-Orange{
+    background-color:#F18624;
+    height: 130px;
+}
+
+.bg-cream{
+    background-color:#FAC08F;
+    height: 70px;
+}
+
+.ion-android-star{
+    color: orange;
+}
+
+.ion-android-star-outline{
+    color: black;
+}
+
+.bg-yellow{
+    color: yellow;
+}
+
+.big-star{
+font-size: 30px;
+    color: grey;
+}
+.thumb{
+    font-size: 30px;
+    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.box{
+    background-color: #F18624;
+    height: 80px;
+    border: 1px solid black
+}
+
+.whiteBox{
+    height: 40px;
+    border: black 1px solid;
+}
+
+.cart{
+    font-size: 25px;
+}
+.border {
+    border: solid 1px black !important;
+}
+.boxHeight{
+    height: 30px;
+}
+.bg-blue{
+    background-color: #0c63ee;
+}
+.textColor{
+    color: dodgerblue;
+}
+
+.ratingNumber{
+    color: #0c63ee;
+    font-size: 10px;
+}
+.bg-grey{
+    background-color: #e4e4e4;
+
+}
+.textSize{
+    font-size: 20px;
+}
+
+.buttonWidth{
+    width: 70px;
+}
+
+.textBold{
+    font-weight: bold;
+}
+.textMarginTop{
+    margin-top: -20px !important;
+}
+
+.selectMargin{
+    margin-top: 10px;
+    margin-left: 8px;
+}
+.divHeight{
+    height: 70px;
+}
+
+.fontLightWeight{
+    font-weight: lighter;
+}
+
+.rowMargin{
+    margin-top: 10px !important;
+}
+
+.fontStyle{
+    font-family: Calibri;
+}
+.thumbMargin{
+    margin-top: -15px;
+}
+
+.item-toggle .toggle{
+
+    top: 0 !important;
+}
+.item-toggle{
+    border: none !important;
+}
+
+.from-me {
+    position: relative;
+    padding: 10px 20px;
+    color: white;
+    background: #0B93F6;
+    border-radius: 25px;
+    float: right;
+}
+.from-me:before {
+     content:"";
+     position:absolute;
+     z-index:-1;
+     bottom:-2px;
+     right:-7px;
+     height:20px;
+     border-right:20px solid #0B93F6;
+     border-bottom-left-radius: 16px 14px;
+     -webkit-transform:translate(0, -2px);
+ }
+
+.from-me:after {
+     content:"";
+     position:absolute;
+     z-index:1;
+     bottom:-2px;
+     right:-56px;
+     width:26px;
+     height:20px;
+     background:white;
+     border-bottom-left-radius: 10px;
+     -webkit-transform:translate(-30px, -2px);
+ }
+
+.from-them {
+    position: relative;
+    padding: 10px 20px;
+    background: #E5E5EA;
+    border-radius: 25px;
+    color: black;
+    float: left;
+}
+.from-them:before {
+     content:"";
+     position:absolute;
+     z-index:2;
+     bottom:-2px;
+     left:-7px;
+     height:20px;
+     border-left:20px solid #E5E5EA;
+     border-bottom-right-radius: 16px 14px;
+     -webkit-transform:translate(0, -2px);
+ }
+
+.from-them:after {
+     content:"";
+     position:absolute;
+     z-index:3;
+     bottom:-2px;
+     left:4px;
+     width:26px;
+     height:20px;
+     background:white;
+     border-bottom-right-radius: 10px;
+     -webkit-transform:translate(-30px, -2px);
+ }
+
+.starSize{
+    font-size: 10px;
+}
+.slider{
+    visibility: visible !important;
+}
+
+
+.optionWindow{
+    max-height: 150px;
+    overflow: scroll;
+}
+
+ion-scroll[direction=y] {
+   max-height: 150px;
+}
+
+.navIcons{
+    font-size: 25px;
+
+}
+
+.pac-container:after{
+    background-image:none !important;
+}
+
+.voteOn{
+    color: blue;
+    font-size: 50px;
+    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.ratingStar{
+    color: orange !important;
+
+}
+.signUpFormEmail{
+    padding: 0 58% 0 0;
+}
+.addEditInvtFormPName{
+    height: 13px;
+}
+.requiredClass{
+    color: red;
+}
+.timePicker{
+    height: 32px;
+    width: 55px;
+    border-color: darkgray !important;
+    font-size: medium;
+}
+.backgroundImage{
+  background-image: url("../img/download.jpg");
+}
+#map-canvas > div > div:nth-child(2) > a{
+  display: none !important;
+}
+.wrapperRow{
+  height: 75px;
+}
+.wrapper{
+  height: 1px;
+}
+.productWeight{
+  height: 35px;
+}
+.greyBackground{
+  background-color: #e4e4e4
+}
+.whiteBackground{
+  background-color: #ffffff;
+}
+.productDescription{
+  margin-top: 6px;
+  height: 60px;
+}
+.starRating{
+  font-size: smaller;
+}
+.productDetailStar{
+  font-size: 9px;
+}
+.profileImage{
+  padding-top: 6px;
+}
+.socialProfiles{
+  padding-top: 7px;
+}
+.addMore{
+  padding-top: 3%;
+}
+.margin-top-1{
+  margin-top: 1px;
+}

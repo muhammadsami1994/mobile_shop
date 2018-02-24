@@ -1,0 +1,28 @@
+<ion-content>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Store Detail</p>
+    </div>
+    <div class=" no-margin">
+        <p class="col textBold">{{storeData.storeName}}</p>
+        <p class="col col-50 textMarginTop">{{storeData.address}}</p>
+        <p class="col textMarginTop"> Store Phone: {{storeData.phone}}</p>
+    </div>
+    <div class=" no-margin">
+        <p class="col textBold">Contact</p>
+        <p class="col textMarginTop"> Susan Smith</p>
+        <a href=""><p class="col textMarginTop"> Ask me</p></a>
+    </div>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Shopping List Items</p>
+    </div>
+    <div class="row" ng-repeat="List in ListData.products" ng-class="{'whiteBackground': $index%2!=0,'greyBackground':$index%2==0 }">
+        <p class="col" style="font-style: oblique;">{{List.productName}}({{List.quantity}} qty)</p>
+    </div>
+    <hr/>
+</ion-content>
+
+<ion-footer-bar>
+  <div class="row">
+      <button class="col col-50 col-offset-25 text-center button" ng-click="addToCart()">Add To Cart</button>
+  </div>
+</ion-footer-bar>

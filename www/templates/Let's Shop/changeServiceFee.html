@@ -1,0 +1,37 @@
+<ion-content>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Order Status</p>
+    </div>
+    <div class="row no-margin">
+        <p class="col text-center"> Your Order is</p>
+    </div>
+    <div class="row no-margin">
+        <h3 class="col text-center"> {{storeData.status}}</h3>
+    </div>
+    <div class="row ">
+        <p class="col text-center textMarginTop"> by a delivery provider</p>
+    </div>
+
+    <div class="row no-margin">
+        <p class="col col-90">Offer  a service fee higher than $18.95 to increase chances of your order getting delivered on-time</p>
+    </div>
+
+    <div class="row">
+        <input class="col col-offset-10 col-33 border" ng-model="serviceFee.fee" type="number"/>
+        <button class="col col-offset-10 col-33" ng-click="updateFee()">Send</button>
+    </div>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Order Items</p>
+    </div>
+
+    <div class="row no-margin" ng-repeat="item in storeData.product" ng-class="{'whiteBackground': $index%2!=0,'greyBackground':$index%2==0 }">
+        <p class="col">{{item.productName}}({{item.quantity}}qty)</p>
+    </div>
+    <hr/>
+</ion-content>
+
+<ion-footer-bar>
+    <div class="row">
+        <button class="col col-offset-25 button col-50" >Cancel</button>
+    </div>
+</ion-footer-bar>

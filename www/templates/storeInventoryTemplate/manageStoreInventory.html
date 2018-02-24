@@ -1,0 +1,38 @@
+<ion-content>
+    <div class="row">
+        <h4 class="col text-center fontLightWeight">{{storeData.storeName}} Inventory</h4>
+    </div>
+
+    <div class="row">
+        <div class="col col-50">
+            <p class="col">Find Product</p>
+            <p class="col">Category</p>
+        </div>
+        <div class="col col-50">
+            <select class="col col-80 col-offset-10" name="" id="1" style="margin-top: 6px">
+                <option value="">Apple</option>
+            </select>
+            <select class="col col-80 col-offset-10" name="" id="2" style="margin-top: 6px">
+                <option value="">Fruits</option>
+            </select>
+        </div>
+    </div>
+    <div class="row no-margin">
+        <button class="col col-50 col-offset-25 ">Search</button>
+    </div>
+<div ng-if="storeProducts.length!=0">
+    <div class="row darkGreybackground text-center no-padding no-margin">
+        <p class="col col-10 ">#</p>
+        <p class="col col-66 no-padding">Items</p>
+        <p class="col col-20 no-padding" >Price</p>
+    </div>
+    <div class="row" ng-repeat="data in storeProducts" ng-class="{'whiteBackground': $index%2==0,'greyBackground':$index%2!=0 }" ng-click="changeState('manageStoreInventory')">
+        <small class="col col-10 no-padding">{{$index+1}}</small>
+        <small class="col col-66 no-padding">{{data.productName}}</small>
+        <small class="col col-20 no-padding">{{data.price}}</small>
+    </div>
+</div>
+    <div class="row" ng-if="storeProducts.length==0">
+        <h4 class="col text-center"><i class="ion-alert-circled"></i>No products are added yet</h4>
+    </div>
+</ion-content>

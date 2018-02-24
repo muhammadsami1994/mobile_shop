@@ -1,0 +1,40 @@
+<ion-content>
+    <h5 class="col">Find Item at Wal-Mart</h5>
+    <label class="item item-input">
+        <input type="text" ng-model="test" placeholder="Fruits">
+        <i class="ion-search"></i>
+    </label>
+    <label class="item item-input">
+        <input type="text" placeholder="Search All Aisles, Pages, and Product Categories">
+    </label>
+
+    <div class="row no-margin">
+        <p class="col col-20">List View</p>
+        <ion-toggle class="col-20" ng-model="Mode" toggle-class="toggle-calm" style="border: none;"></ion-toggle>
+        <button class="button button-small button-light col-33 col-offset-10">Search</button>
+    </div>
+
+
+    <div class="col col-50" ng-repeat="box in products | filter:test | orderBy : box.productName" style="display: inline-block">
+        <div class="col-90 box">
+            <i class="ion-android-cart col-offset-80 cart" ng-click="productDetails(box)"></i>
+        </div>
+        <div class="col-90 whiteBox">
+            <div class="col col-90 no-padding">
+                <small class="col-50 no-margin inline">${{box.price}}/lbs</small>
+                <div class="col inline starSize col-offset-10" style="position: fixed">
+                    <i class="ion-android-star bg-yellow"></i>
+                    <i class="ion-android-star bg-yellow"></i>
+                    <i class="ion-android-star bg-yellow"></i>
+                    <i class="ion-android-star bg-yellow"></i>
+                </div>
+            </div>
+            <small  class="col col-90 no-margin no-padding">
+                {{box.productName}}
+            </small>
+        </div>
+
+    </div>
+
+
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-content>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Order History Filter</p>
+    </div>
+    <div class="row rowMargin">
+        <p class="col col-50"> Search an Order</p>
+        <input class="col col50 border" type="text"/>
+    </div>
+    <div class="row">
+        <button class="col col-50 col-offset-25 text-center">Search</button>
+    </div>
+
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Order History</p>
+    </div>
+
+    <div  ng-repeat="orderHistory in orderHistories track by $index" ng-class="{'whiteBackground': $index%2!=0,'greyBackground':$index%2==0 }" ng-click="changeState('orderDeliveryDetail')">
+        <div class="row">
+            <p class="col col-33">04/03/2015</p>
+            <p class="col col-50 col-offset-25 ">Order # AAA-BBI</p>
+        </div>
+        <p class="col textMarginTop">{{orderHistory}}</p>
+    </div>
+</ion-content>

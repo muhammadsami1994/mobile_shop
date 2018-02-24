@@ -1,0 +1,28 @@
+<ion-content>
+    <div class="row">
+        <p class="col">Here’s your {{shoppingListData.storeName}} shopping Check-list. Please check-mark each items as they are collected.</p>
+    </div>
+
+    <div class="row darkGreybackground no-padding">
+        <p class="col col-80 no-padding">-Shopping Check-list</p>
+    </div>
+
+    <div class="" ng-repeat="shoppingList in shoppingListData.product" ng-class="{'whiteBackground': $index%2==0,'greyBackground':$index%2!=0 }" ng-click="showPopup(shoppingList.deliveryManStatus,$index)">
+        <div class="row">
+            <p class="col-10">{{$index+1}}</p>
+            <p class=" col-90"><input class="col-offset-10" type="checkbox" ng-model="shoppingList.status"/> {{shoppingList.productName}}</p>
+        </div>
+        <p class=" col-90 col-offset-10 no-padding" ng-show="shoppingList.deliveryManStatus" style="margin-top: 0">{{shoppingList.deliveryManStatus}}</p>
+        <p class=" col col-90 col-offset-10 no-padding " ng-show="shoppingList.notification" style="text-decoration: underline;margin-top: 0">Purchase Note:</p>
+        <p class=" col-90 col-offset-10 no-padding" ng-show="shoppingList.notification" style="margin-top: 0">{{shoppingList.notification}}</p>
+    </div>
+
+    <hr style="border: 2px solid #000000"/>
+
+    <div class="row">
+        <button class="col-80 col-offset-10" ng-click="setDeliveryStatus('Done,I will deliver Now')">Done,I will deliver Now</button>
+    </div>
+  <div class="row">
+        <button class="col-80 col-offset-10 margin-top-1" ng-click="setDeliveryStatus('Done,I will deliver Later')">Done,I will deliver Later</button>
+    </div>
+</ion-content>

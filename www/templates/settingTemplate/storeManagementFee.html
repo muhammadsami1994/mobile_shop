@@ -1,0 +1,13 @@
+<ion-content>
+    <div class="row darkGreybackground  no-padding" ng-click="changeState('verifyFinancialRecord')">
+        <p class="col col-80 no-padding">My Stores</p>
+        <p class="col col-20 ">%Fee</p>
+    </div>
+    <div
+            class="row no-margin"
+            ng-repeat="data in myStores"
+            ng-class="{'whiteBackground': $index%2==0,'greyBackground':$index%2!=0 }">
+        <p class="col col-80">{{data}}</p>
+        <div class="col col-20 text-center no-padding" style="vertical-align: top;">1%</div>
+    </div>
+</ion-content>

@@ -1,0 +1,62 @@
+<ion-content>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col" ng-class="{'requiredClass': deliveryName}">Delivery To</p>
+    </div>
+    <div class="row no-margin" ng-repeat="location in locations">
+        <div class="col">
+            <input type="radio" ng-model="scopeValue"  ng-click="scopeFunc(location)" name="location"/>
+            <span>{{location}}</span>
+        </div>
+    </div>
+   <!-- <div class="row">
+        <textarea class="col col-80 col-offset-10 border" name="" id="" cols="30" rows="4"></textarea>
+    </div>-->
+  <div class="row" ng-if="deliveryDetails.destinationName == 'New Location'">
+    <small class="col col-33">Co-ordinates</small>
+    <input class="col col-25 border" type="number" ng-model="deliveryDetails.locationData.lat"/>
+    <input class="col col-25 col-offset-10 border" type="number" ng-model="deliveryDetails.locationData.long"/>
+  </div>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col" ><span ng-class="{'requiredClass': deliverySchedule}">Delivery Schedule</span></p>
+    </div>
+    <div class="row no-margin">
+        <!--<select class="col col-25 selectMargin">
+            <option value="" ng-repeat="months in monthArray">{{months}}</option>
+        </select>-->
+        <select class="col col-45 selectMargin" ng-model="schedule.month" ng-options="month for month in monthArray">
+          <option value="">Month</option>
+        </select>
+        <select class="col col-20 selectMargin" ng-model="schedule.date" ng-options="date for date in Dates">
+                <!--<option value="" ng-repeat="date in Dates">{{date}}</option>-->
+                <option value="">Date</option>
+        </select>
+        <select class="col col-20 selectMargin" ng-model="schedule.year" ng-options="year for year in Years">
+            <!--<option value="" ng-repeat="year in Years track by $index">{{year}}</option>-->
+            <option value="">Year</option>
+        </select>
+        <!--<select class="col col-20 selectMargin">
+            <option value="may">Time</option>
+        </select>-->
+        <ionic-timepicker input-obj="timePickerObject">
+            <button class="button button-small button-light selectMargin timePicker">
+              Time
+                <standard-time-meridian etime='timePickerObject.inputEpochTime'></standard-time-meridian>
+            </button>
+        </ionic-timepicker>
+    </div>
+
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Optional Delivery Instructions</p>
+    </div>
+
+    <div class="row no-margin" style="padding-top: 5px">
+        <div class="col border">Upon arrival, please leave ring the door bell and wait for someone to receive the items.  Thank you.</div>
+    </div>
+</ion-content>
+
+<ion-footer-bar>
+    <div class="row">
+        <!--<button class="col text-center button" ng-click="changeState('setBillingInfo')">Add To Cart</button>-->
+        <button class="col text-center button" ng-click="addToCart()">Add To Cart</button>
+    </div>
+</ion-footer-bar>

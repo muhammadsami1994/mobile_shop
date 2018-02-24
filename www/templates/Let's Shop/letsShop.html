@@ -1,0 +1,59 @@
+
+
+<ion-content>
+    <div class="col">
+        <div id="map-canvas" style="height: 250px;"></div>
+        <p>Select a Store</p>
+
+        <label class="item item-input">
+            <input type="text" placeholder="ABC Store, 123 Sunshine Ave, City…" ng-model="storeSearchData.search" ng-change="searchStores()" ng-blur="hideOptionWindow('storeName')">
+        </label>
+        <ion-scroll delegate-handle="taskScroll" direction="y">
+            <div class="list" ng-if="storeSearchData.storeMatches.length>0" >
+                <li class="item" ng-repeat="matches in storeSearchData.storeMatches" ng-click="selectStoreFromOptions(matches.storeName)">{{matches.storeName}}</li>
+            </div>
+        </ion-scroll>
+        <label class="item item-input">
+       <!--     <input type="text" placeholder="Near Me(default is my location)" ng-model="searchLocation" id="input" ng-change="locationAutoComplete()">-->
+            <input type="text" g-places-autocomplete ng-model="$parent.searchLocation" placeholder="Near Me(default is my location)"/>
+        </label>
+
+        <label class="item item-input">
+            <input type="text" placeholder="All Industry Categories (restaurant, grocery, etc.)" ng-model="CategoryData.search" ng-change="searchCategory()" ng-blur="hideOptionWindow('category')">
+        </label>
+        <ion-scroll delegate-handle="taskScroll" direction="y">
+            <div class="list optionWindow">
+                <li class="item" ng-repeat="matches in CategoryData.categoryMatches" ng-click="selectFromOptions(matches)" >{{matches}}</li>
+            </div>
+        </ion-scroll>
+        <div class="row">
+            <p class="col">Show Unlisted Stores</p>
+            <div class="col row-center">
+                <ion-toggle ng-model="showUnlistedStore" toggle-class="toggle-calm" ng-change="UnlistedStore(showUnlistedStore)" style="border: none;overflow: visible" ></ion-toggle>
+            </div>
+        </div>
+        <div class="row no-margin no-padding">
+            <button class="col col-50 col-offset-25" ng-click="checkLocation()">Go To Store</button>
+        </div>
+    </div>
+
+</ion-content>
+
+<ion-footer-bar>
+    <div class="col-20">
+        <button class="button  button-icon icon ion-ios-home" ng-click="changeState('home')"></button>
+    </div>
+    <div class="col-20">
+        <button class="button  button-icon icon ion-document-text" ng-click="changeState('listOfActiveOrders')"></button>
+    </div>
+    <div class="col-20">
+        <button class="button  button-icon icon ion-android-bus" ng-click="changeState('setDeliveryPoint')"></button>
+    </div>
+    <div class="col-20">
+        <button class="button button-icon  icon ion-ios-folder" ng-click="changeState('orderHistory')"></button>
+    </div>
+    <div class="col-20">
+        <button class="button button-icon  icon ion-star" ng-click=""></button>
+    </div>
+</ion-footer-bar>
+

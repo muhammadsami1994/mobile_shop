@@ -1,0 +1,11 @@
+<ion-content>
+    <div class="row darkGreybackground no-padding" style="margin-top: 2%">
+        <p class="col col-80 no-padding">Deliveries History</p>
+        <p class="col col-20 no-padding" >D.time</p>
+    </div>
+    <div class="row" ng-repeat="data in deliveryData" ng-class="{'whiteBackground': $index%2==0,'greyBackground':$index%2!=0 }">
+        <p class="col col-80 no-padding">{{data.name}}</p>
+        <p class="col col-20 no-padding" style="font-size: 10px">{{data.Date}}</p>
+    </div>
+    <hr/>
+</ion-content>

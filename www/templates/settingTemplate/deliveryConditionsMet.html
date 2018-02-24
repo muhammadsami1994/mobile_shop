@@ -1,0 +1,11 @@
+<ion-content>
+    <div class="row darkGreybackground  no-padding" ng-click="changeState('addDeliveryFeeTemplate')">
+        <p class="col col-10 ">#</p>
+        <p class="col col-90 no-padding">Delivery Free Templates</p>
+
+    </div>
+    <div class="row" ng-repeat="data in deliveryTempalte" ng-class="{'whiteBackground': $index%2==0,'greyBackground':$index%2!=0 }" ng-click="changeState('addStoresFeeTemplate')">
+        <small class="col col-10 no-padding">{{$index+1}}</small>
+        <small class="col col-90 no-padding">{{data}}</small>
+    </div>
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-content>
+    <div class="row darkGreybackground">
+        <p class="col">Item Purchase Detail</p>
+    </div>
+    <p class="row no-margin">Item Description</p>
+    <div class="row">
+        <!--<textarea class="col col-80 col-offset-10 border" name="" id="" cols="30" rows="5" placeholder="Yellow Carrot Sliced in half"></textarea>-->
+        <textarea class="col col-80 col-offset-10 border" name="item description" cols="30" rows="5" placeholder="Yellow Carrot Sliced in half" ng-model="itemObj.name"></textarea>
+    </div>
+
+    <label class="item item-input">
+        <span class="input-label ">Qty</span>
+        <input type="number" placeholder="1" ng-model="itemObj.quantity">
+    </label>
+    <label class="item item-input">
+        <span class="input-label ">Approx.Price</span>
+        <input type="number" placeholder="20" ng-model="itemObj.approxPrice">
+    </label>
+
+
+    <p class="row no-margin">Purchase Instruction</p>
+    <div class="row">
+        <!--<textarea class="col col-80 col-offset-10 border" name="" id="" cols="30" rows="5" placeholder="Yellow Carrot Sliced in half"></textarea>-->
+        <textarea class="col col-80 col-offset-10 border" name="Purchase Instruction" cols="30" rows="5" placeholder="Yellow Carrot Sliced in half" ng-model="itemObj.purchaseInstruction"></textarea>
+    </div>
+</ion-content>
+
+<ion-footer-bar>
+    <div class="row">
+        <div class="col col-33">
+            <!--<button class="col-80 col-offset-10 buttonWidth" ng-click="changeState('addItemDetail')">Add</button>-->
+            <button class="col-80 col-offset-10 buttonWidth" ng-click="saveItemDetails()" ng-disabled="disableAddButton">Add</button>
+        </div>
+        <div class="col col-33">
+            <button class="col-80 col-offset-10 buttonWidth" ng-disabled="disableUpdateButton" ng-click="updateSelectedItem()">Update</button>
+        </div>
+        <div class="col col-33">
+            <button class="col-80 col-offset-10 buttonWidth">Delete</button>
+        </div>
+    </div>
+</ion-footer-bar>

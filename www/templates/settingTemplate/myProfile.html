@@ -1,0 +1,38 @@
+
+<ion-content class="has-header scroll-content">
+    <div class="row darkGreybackground">
+        <p class="col">My Profile</p>
+    </div>
+
+
+
+    <label class="item item-input" ng-repeat="label in inputLabels">
+        <span class="input-label ">{{label}}</span>
+        <input type="text">
+    </label>
+    <div class="row darkGreybackground">
+        <p class="col"> Picture</p>
+    </div>
+    <div class="row">
+        <div class="col col-50">
+            <img src="img/loginLogo.png" alt="" style="height: 75px;width: 60%"/>
+        </div>
+        <div class="col-50" style="text-align: center">
+            <div style="margin-top: 10%">Take a Picture</div>
+            <div style="margin-top: 10%">Select a Picture</div>
+        </div>
+    </div>
+
+    <div class="row darkGreybackground">
+        <p class="col">Link  My Profile</p>
+    </div>
+    <div class="row no-margin">
+        <div class="col">
+            <ion-toggle ng-model="model" toggle-class="toggle-calm" style="border: none;padding: 11px" ng-repeat="socialNames in socialProfiles">{{socialNames}}</ion-toggle>
+        </div>
+    </div>
+    <div class="row darkGreybackground">
+        <p class="col">Default Options</p>
+    </div>
+
+</ion-content>

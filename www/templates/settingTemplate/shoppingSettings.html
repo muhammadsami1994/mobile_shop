@@ -1,0 +1,21 @@
+<ion-content>
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Save these information to my device</p>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <ion-toggle ng-model="Mode" toggle-class="toggle-calm" style="border: none;padding: 11px" ng-repeat="shoppingSetting in shoppingSettings">{{shoppingSetting}}</ion-toggle>
+        </div>
+    </div>
+
+    <div class="row darkGreybackground no-padding no-margin">
+        <p class="col">Share My Activities</p>
+    </div>
+
+    <div class="row no-margin">
+        <div class="col">
+            <ion-toggle ng-model="Mode" toggle-class="toggle-calm" style="border: none;padding: 11px" ng-repeat="socialNames in socialProfiles">{{socialNames}}</ion-toggle>
+        </div>
+    </div>
+</ion-content>

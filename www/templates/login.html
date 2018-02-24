@@ -1,0 +1,26 @@
+<ion-content>
+    <div class="list">
+        <div class="item textCenter no-padding" ng-repeat="loginNames in socialLogins" ng-class="{'whiteBackground': $index%2==0,'greyBackground':$index%2!=0 }" ng-click="checkState(loginNames)">
+            {{loginNames}}
+        </div>
+    </div>
+
+    <div class="row inline">
+        <img src="img/loginLogo.png" alt="" class="col-offset-34" style="width: 33%;height: 75px"/>
+    </div>
+
+    <div class="row" style="margin-top:2%">
+        <label class="item item-input col col-50 col-offset-25">
+            <input type="text" placeholder="Username" ng-model="loginData.username">
+        </label>
+    </div>
+    <div class="row" style="margin-top: 2%">
+        <label class="item item-input col col-50 col-offset-25">
+            <input type="password" placeholder="Password" ng-model="loginData.password">
+        </label>
+    </div>
+
+    <div class="row" style="margin-top: 5%">
+        <button class="button col col-33 col-offset-33" style="padding: 0" ng-click="login()">Sign-In</button>
+    </div>
+</ion-content>
